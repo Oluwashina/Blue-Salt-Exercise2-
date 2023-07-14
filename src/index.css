@@ -1,13 +1,33 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    background-color: #FAFAFA;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* badges */
+.pending-badge {
+    background: #FFF7EC;
+    border-radius: 36px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: #FFB647;
+    padding: 4px 16px;
+    gap: 2px;
+    width: fit-content;
 }
+
+.active-badge {
+    background: #EFF8F2;
+    border-radius: 36px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: #63B67F;
+    padding: 4px 16px;
+    gap: 2px;
+    width: fit-content;
+  }
