@@ -7,6 +7,8 @@ import TrendingDownIcon from '@mui/icons-material/TrendingDown';
 import DoneAllIcon from '@mui/icons-material/DoneAll';
 import GroupIcon from '@mui/icons-material/Group';
 import LocalMallIcon from '@mui/icons-material/LocalMall';
+import LineChartComp from '../../components/Charts/LineChart';
+import BarChartComp from '../../components/Charts/BarChart';
 
 const DashboardPage = () => {
     return ( 
@@ -52,12 +54,13 @@ const DashboardPage = () => {
 
             {/* user inflow stats */}
             <div className='grid grid-cols-4 gap-4 mt-6'>
-                <div className='col-span-3 bg-white rounded-lg py-4 px-4'>
-                  <p className='text-base font-semibold'>User Inflow Statistics</p>
-
+                <div className='col-span-3 bg-white rounded-lg py-4 px-4 h-[400px]'>
+                  <p className='text-base font-semibold'>User Inflow Statistics</p>    
+                     <LineChartComp />
                 </div>
-                <div className='bg-[#871073] rounded-lg py-4 px-4'>
-
+                <div className='bg-[#871073] rounded-lg py-4 px-3'>
+                    <BarChartComp />
+                    
                 </div>
             </div>
 

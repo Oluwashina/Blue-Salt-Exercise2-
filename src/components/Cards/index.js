@@ -10,7 +10,7 @@ const Cards = ({bgColor,icon, trendStatus, title, subtitle, trendValue,trendColo
                 </div>
                 <div>
                     <h6 className='font-semibold text-lg md:text-xl'>{title}</h6>
-                    <p className='text-sm'>{subtitle}</p>
+                    <p className='text-sm text-[#AAAAAA]'>{subtitle}</p>
 
                     <div className='mt-2 flex items-center gap-2'>
                         <div className='flex gap-1 items-center'>

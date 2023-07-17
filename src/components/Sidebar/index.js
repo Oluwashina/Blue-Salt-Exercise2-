@@ -150,7 +150,7 @@ const SidebarComp = ({children}) => {
                                 />
                             </div>
 
-                            <div className='flex gap-1 items-center'>
+                            <div className='flex gap-1 items-center cursor-pointer'>
                                 <p className='text-[#767676] font-semibold'>EN</p>
                                 <KeyboardArrowDownIcon style={{color: '#B9B9B9'}} />
                             </div>
