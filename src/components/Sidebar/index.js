@@ -3,7 +3,8 @@ import search_icon from '../../assets/icons/search-normal.svg'
 import WbSunnyIcon from '@mui/icons-material/WbSunny';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import logo_white from '../../assets/icons/logo-white.svg'
+// import logo_white from '../../assets/icons/logo-white.svg'
+// import logo_white from '../../assets/icons/wema.png'
 import { Link, useLocation } from 'react-router-dom';
 import HomeIcon from '@mui/icons-material/Home';
 import SettingsIcon from '@mui/icons-material/Settings';
@@ -47,7 +48,7 @@ const SidebarComp = ({children}) => {
             <div className='flex min-h-screen'>
                <div className='bg-[#9A0E81] md:w-64 flex-shrink-0 px-4 oveflow-y-scroll py-8 hidden lg:block'>
                     <div className='flex justify-center'>
-                        <img src={logo_white} alt="logo" />
+                        <img src="https://asset.brandfetch.io/idMFIShKZ1/idiGgjHxNk.png" alt="logo" />
                     </div>
                   <div className='bg-[#A3258E] w-full h-[1px] mt-2'></div>
 
@@ -167,7 +168,7 @@ const SidebarComp = ({children}) => {
                 }
                  >
                      <div className='flex justify-center'>
-                        <img src={logo_white} alt="logo" />
+                        <img src="https://asset.brandfetch.io/idMFIShKZ1/idiGgjHxNk.png" alt="logo" />
                     </div>
 
                     <div className='mt-6 flex flex-col justify-between' style={{height: 'calc(100vh - 50px)'}}>
