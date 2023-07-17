@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState, useRef, useEffect} from 'react'
 import search_icon from '../../assets/icons/search-normal.svg'
 import WbSunnyIcon from '@mui/icons-material/WbSunny';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
@@ -12,9 +12,35 @@ import GroupIcon from '@mui/icons-material/Group';
 import TextSnippetIcon from '@mui/icons-material/TextSnippet';
 import StickyNote2Icon from '@mui/icons-material/StickyNote2';
 import NoteAltIcon from '@mui/icons-material/NoteAlt';
+import MenuIcon from '@mui/icons-material/Menu';
+import './sidebar.css'
+
 const SidebarComp = ({children}) => {
 
     const location = useLocation()
+    const ref = useRef()
+    const [sideShow, setSideShow] = useState(false);
+
+ const toggleMobileMenu = () =>{
+    setSideShow(sideShow ? false : true);
+ }
+
+ useEffect(() => {
+    /**
+     * Alert if clicked on outside of element
+     */
+    function handleClickOutside(event) {
+      if (ref.current && !ref.current.contains(event.target)) {
+        setSideShow(false);
+      }
+    }
+    // Bind the event listener
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      // Unbind the event listener on clean up
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [ref, setSideShow])
 
     return ( 
         <>
@@ -130,9 +156,131 @@ const SidebarComp = ({children}) => {
 
                 </div>
 
+                {/* mobile toggle */}
+                <div  ref={ref} 
+                 className={
+                 sideShow
+                    ?
+                    'bg-[#9A0E81] w-64 fixed userside show flex-shrink-0 oveflow-y-scroll py-8 md:hidden'
+                    :
+                    'bg-[#9A0E81] w-64 fixed h-screen userside flex-shrink-0 oveflow-y-scroll py-8 md:hidden'
+                }
+                 >
+                     <div className='flex justify-center'>
+                        <img src={logo_white} alt="logo" />
+                    </div>
+
+                    <div className='mt-6 flex flex-col justify-between' style={{height: 'calc(100vh - 50px)'}}>
+                     <div>
+                      <Link to="/" 
+                          className={
+                            location.pathname.includes('/')
+                            ?
+                            "flex items-center w-full py-2 px-2 rounded-[4px] bg-[#A3258E] text-white border-r-2 border-[#fff]"
+                            :
+                            "flex items-center w-full py-4 px-2 rounded-[4px] text-white  hover:bg-[#174A37] duration-300"
+                        }>
+                            <HomeIcon style={{width: '22px', height: '22px'}}  />
+                            <span className="ml-2 text-sm">Dashboard</span>
+                        </Link>
+
+
+                        <Link to="/requests" 
+                        className={
+                            location.pathname.includes('/requests')
+                            ?
+                            "flex items-center w-full py-2 mt-5 px-2 rounded-[4px] bg-[#A3258E] text-white  border-r-2 border-[#fff]"
+                            :
+                            "flex items-center w-full mt-5 py-2 px-2 rounded-[4px] text-[#D69ECD]  hover:bg-[#A3258E] duration-300"
+                        }>
+                            <ChatIcon style={{width: '22px', height: '22px'}} />
+                            <span className="ml-2 text-sm">Requests</span>
+                        </Link>
+
+                        <Link to="/kyc" 
+                        className={
+                            location.pathname.includes('/kyc')
+                            ?
+                            "flex items-center w-full py-2 mt-5 px-2 rounded-[4px] bg-[#A3258E] text-white  border-r-2 border-[#fff]"
+                            :
+                            "flex items-center w-full mt-5 py-2 px-2 rounded-[4px] text-[#D69ECD]  hover:bg-[#A3258E] duration-300"
+                        }>
+                            <NoteAltIcon style={{width: '22px', height: '22px'}} />
+                            <span className="ml-2 text-sm text-[#D69ECD]">KYCs</span>
+                        </Link>
+
+                        <Link to="/reports" 
+                        className={
+                            location.pathname.includes('/reports')
+                            ?
+                            "flex items-center w-full py-2 mt-5 px-2 rounded-[4px] bg-[#A3258E] text-white  border-r-2 border-[#fff]"
+                            :
+                            "flex items-center w-full mt-5 py-2 px-2 rounded-[4px] text-[#D69ECD]  hover:bg-[#A3258E] duration-300"
+                        }>
+                            <TextSnippetIcon style={{width: '22px', height: '22px'}} />
+                            <span className="ml-2 text-sm text-[#D69ECD]">Reports</span>
+                        </Link>
+
+                        <Link to="/audit" 
+                        className={
+                            location.pathname.includes('/audit')
+                            ?
+                            "flex items-center justify-between w-full py-2 mt-5 px-2 rounded-[4px] bg-[#A3258E] text-white  border-r-2 border-[#fff]"
+                            :
+                            "flex items-center justify-between w-full mt-5 py-2 px-2 rounded-[4px] text-[#D69ECD]  hover:bg-[#A3258E] duration-300"
+                        }>
+                            <div>
+                            <StickyNote2Icon style={{width: '22px', height: '22px'}} />
+                            <span className="ml-2 text-sm text-[#D69ECD]">Audit Trail</span>
+                            </div>
+                            <div className='w-[20px] h-[20px] flex justify-center items-center rounded-full bg-[#C26EB3]'>
+                                <KeyboardArrowDownIcon style={{color: '#fff', fontSize: '18px'}} />
+                            </div>
+                            
+                        </Link>
+
+                        <Link to="/users" 
+                        className={
+                            location.pathname.includes('/users')
+                            ?
+                            "flex items-center w-full py-2 mt-5 px-2 rounded-[4px] bg-[#A3258E] text-white  border-r-2 border-[#fff]"
+                            :
+                            "flex items-center w-full mt-5 py-2 px-2 rounded-[4px] text-[#D69ECD]  hover:bg-[#A3258E] duration-300"
+                        }>
+                            <GroupIcon style={{width: '22px', height: '22px'}} />
+                            <span className="ml-2 text-sm">Users</span>
+                        </Link>
+
+                        <Link to="/settings" 
+                        className={
+                            location.pathname.includes('/settings')
+                            ?
+                            "flex items-center w-full py-2 mt-5 px-2 rounded-[4px] bg-[#A3258E] text-white  border-r-2 border-[#fff]"
+                            :
+                            "flex items-center w-full mt-5 py-2 px-2 rounded-[4px] text-[#D69ECD]  hover:bg-[#A3258E] duration-300"
+                        }>
+                            <SettingsIcon style={{width: '22px', height: '22px'}} />
+                            <span className="ml-2 text-sm">Settings</span>
+                        </Link>
+                      </div>
+
+                        <div className='mt-8 bg-[#A3258E] rounded-lg py-2 px-3 flex items-center gap-2'>
+                            <div className='bg-[#D8D8D8] w-[50px] h-[50px] rounded-full'></div>
+                           <div>
+                            <h6 className='text-[#fff] text-sm'>Nafisa Sh.</h6>
+                            <p className='text-[#D192C7] text-[10px] tracking-wider'>Support manager</p>                            
+                           </div>
+                        </div>
+                  </div>
+
+                </div>
+
                 <div className='flex-grow flex-auto flex-shrink overflow-y-scroll'>
                     {/* navbar */}
                     <div className='flex px-4 md:px-4 py-4 justify-between items-center bg-white'>
+                       <div onClick={toggleMobileMenu} className='cursor-pointer block md:hidden'>
+                            <MenuIcon />
+                            </div>
                         <div>
                             <h4 className='md:text-2xl text-lg font-semibold'>Dashboard</h4>
                         </div>
@@ -150,7 +298,9 @@ const SidebarComp = ({children}) => {
                                 />
                             </div>
 
-                            <div className='flex gap-1 items-center cursor-pointer'>
+                         
+
+                            <div className='md:flex gap-1 items-center cursor-pointer  hidden'>
                                 <p className='text-[#767676] font-semibold'>EN</p>
                                 <KeyboardArrowDownIcon style={{color: '#B9B9B9'}} />
                             </div>

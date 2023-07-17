@@ -14,7 +14,7 @@ const DashboardPage = () => {
     return ( 
         <>
             {/* overview cards */}
-            <div className='grid grid-cols-4 gap-4'>
+            <div className='grid md:grid-cols-4 gap-4'>
                 <Cards
                  bgColor="bg-[#EBEDFA]"
                  icon={<RestoreIcon style={{color:'#2F49D2'}} />}
@@ -53,7 +53,7 @@ const DashboardPage = () => {
             </div>
 
             {/* user inflow stats */}
-            <div className='grid grid-cols-4 gap-4 mt-6'>
+            <div className='hidden md:grid md:grid-cols-4 gap-4 mt-6 '>
                 <div className='col-span-3 bg-white rounded-lg py-4 px-4 h-[400px]'>
                   <p className='text-base font-semibold'>User Inflow Statistics</p>    
                      <LineChartComp />
@@ -65,7 +65,7 @@ const DashboardPage = () => {
             </div>
 
             {/* recent requests table */}
-            <div className='grid grid-cols-4 gap-4 mt-6'>
+            <div className='grid md:grid-cols-4 gap-4 mt-6'>
                  <div className='col-span-3 bg-white rounded-lg py-6'>
                     <p className='text-base font-semibold px-4'>Recent Requests</p>
                     <RequestTable />

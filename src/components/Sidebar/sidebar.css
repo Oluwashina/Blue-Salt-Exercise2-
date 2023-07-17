@@ -1,0 +1,17 @@
+
+.userside{
+    height: 100vh;
+    top: 0;
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+    z-index: 99;
+    transition: .3s cubic-bezier(.25,.8,.5,1),z-index 1ms;
+}
+
+.userside.show{
+    height: 100vh;
+    top: 0;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    position: fixed;
+}
