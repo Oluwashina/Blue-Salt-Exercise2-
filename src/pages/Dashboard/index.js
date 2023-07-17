@@ -18,19 +18,26 @@ const DashboardPage = () => {
                  icon={<RestoreIcon style={{color:'#2F49D2'}} />}
                     title={"147,628"}
                     subtitle={"Pending Requests"}
-                 trendStatus={<TrendingUpIcon style={{color: '#4CDE97'}} />} />
+                 trendStatus={<TrendingUpIcon style={{color: '#4CDE97'}}/>}
+                 trendValue="4.07%"
+                 trendColor="text-[#4CDE97]"
+                  />
                 <Cards 
                   bgColor="bg-[#FFF8ED]"
                   trendStatus={<TrendingUpIcon style={{color: '#4CDE97'}} />}
                   icon={<DoneAllIcon style={{color: '#FFB647'}}/>} 
                      title={"478,520"}
                     subtitle={"Approved Requests"}
+                    trendValue="0.24%"
+                    trendColor="text-[#4CDE97]"
                 />
                 <Cards 
                  bgColor="bg-[#EFEAFD]"
-                icon={<LocalMallIcon style={{color: '#9573F1'}} />} trendStatus={<TrendingDownIcon style={{color: '#E40000'}} />} 
+                icon={<LocalMallIcon style={{color: '#9573F1'}} />} trendStatus={<TrendingDownIcon style={{color: '#F26464'}} />} 
                  title={"154,872"}
                  subtitle={"Total Agents"}
+                 trendValue="1.64%"
+                 trendColor="text-[#F26464]"
                 />
                 <Cards 
                  bgColor="bg-[#EDFCF5]"
@@ -38,6 +45,8 @@ const DashboardPage = () => {
                  />} 
                  title={"168"}
                  subtitle={"Total Users"}
+                 trendValue="0.00%"
+                 trendColor="text-[#FFB647]"
                  />
             </div>
 

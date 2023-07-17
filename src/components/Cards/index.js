@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Cards = ({bgColor,icon, trendStatus, title, subtitle}) => {
+const Cards = ({bgColor,icon, trendStatus, title, subtitle, trendValue,trendColor}) => {
     return ( 
         <>
         <div className='bg-white rounded-lg py-4 px-6'>
@@ -15,7 +15,7 @@ const Cards = ({bgColor,icon, trendStatus, title, subtitle}) => {
                     <div className='mt-2 flex items-center gap-2'>
                         <div className='flex gap-1 items-center'>
                             {trendStatus}
-                            <p className='text-sm'>4.07%</p>
+                            <p className={`text-sm ${trendColor}`}>{trendValue}</p>
                         </div>
                         <div>
                             <p className='text-sm text-[#BDBDBD]'>Last Month</p>

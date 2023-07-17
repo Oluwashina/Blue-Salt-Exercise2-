@@ -6,30 +6,36 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import logo_white from '../../assets/icons/logo-white.svg'
 import { Link, useLocation } from 'react-router-dom';
 import HomeIcon from '@mui/icons-material/Home';
-
+import SettingsIcon from '@mui/icons-material/Settings';
+import ChatIcon from '@mui/icons-material/Chat';
+import GroupIcon from '@mui/icons-material/Group';
+import TextSnippetIcon from '@mui/icons-material/TextSnippet';
+import StickyNote2Icon from '@mui/icons-material/StickyNote2';
+import NoteAltIcon from '@mui/icons-material/NoteAlt';
 const SidebarComp = ({children}) => {
 
     const location = useLocation()
 
     return ( 
         <>
-            <div className='flex h-screen'>
-               <div className='bg-[#9A0E81] md:w-64 flex-shrink-0 px-4 oveflow-y-scroll py-6 hidden lg:block'>
+            <div className='flex min-h-screen'>
+               <div className='bg-[#9A0E81] md:w-64 flex-shrink-0 px-4 oveflow-y-scroll py-8 hidden lg:block'>
                     <div className='flex justify-center'>
                         <img src={logo_white} alt="logo" />
                     </div>
                   <div className='bg-[#A3258E] w-full h-[1px] mt-2'></div>
 
-                  <div className='mt-6'>
+                  <div className='mt-6 flex flex-col justify-between' style={{height: 'calc(100vh - 50px)'}}>
+                     <div>
                       <Link to="/" 
                           className={
                             location.pathname.includes('/')
                             ?
-                            "flex items-center w-full py-2 px-4 rounded-[4px] bg-[#A3258E] text-white border-r-2 border-[#fff]"
+                            "flex items-center w-full py-2 px-2 rounded-[4px] bg-[#A3258E] text-white border-r-2 border-[#fff]"
                             :
-                            "flex items-center w-full py-4 px-6 rounded-[4px] text-white  hover:bg-[#174A37] duration-300"
+                            "flex items-center w-full py-4 px-2 rounded-[4px] text-white  hover:bg-[#174A37] duration-300"
                         }>
-                            <HomeIcon className='w-[18px] h-[18px]' />
+                            <HomeIcon style={{width: '22px', height: '22px'}}  />
                             <span className="ml-2 text-sm">Dashboard</span>
                         </Link>
 
@@ -38,11 +44,11 @@ const SidebarComp = ({children}) => {
                         className={
                             location.pathname.includes('/requests')
                             ?
-                            "flex items-center w-full py-2 mt-5 px-4 rounded-[4px] bg-[#A3258E] text-white  border-r-2 border-[#fff]"
+                            "flex items-center w-full py-2 mt-5 px-2 rounded-[4px] bg-[#A3258E] text-white  border-r-2 border-[#fff]"
                             :
-                            "flex items-center w-full mt-5 py-2 px-4 rounded-[4px] text-[#D69ECD]  hover:bg-[#A3258E] duration-300"
+                            "flex items-center w-full mt-5 py-2 px-2 rounded-[4px] text-[#D69ECD]  hover:bg-[#A3258E] duration-300"
                         }>
-                            <HomeIcon className='w-[18px] h-[18px]' />
+                            <ChatIcon style={{width: '22px', height: '22px'}} />
                             <span className="ml-2 text-sm">Requests</span>
                         </Link>
 
@@ -50,11 +56,11 @@ const SidebarComp = ({children}) => {
                         className={
                             location.pathname.includes('/kyc')
                             ?
-                            "flex items-center w-full py-2 mt-5 px-4 rounded-[4px] bg-[#A3258E] text-white  border-r-2 border-[#fff]"
+                            "flex items-center w-full py-2 mt-5 px-2 rounded-[4px] bg-[#A3258E] text-white  border-r-2 border-[#fff]"
                             :
-                            "flex items-center w-full mt-5 py-2 px-4 rounded-[4px] text-[#D69ECD]  hover:bg-[#A3258E] duration-300"
+                            "flex items-center w-full mt-5 py-2 px-2 rounded-[4px] text-[#D69ECD]  hover:bg-[#A3258E] duration-300"
                         }>
-                            <HomeIcon className='w-[18px] h-[18px]' />
+                            <NoteAltIcon style={{width: '22px', height: '22px'}} />
                             <span className="ml-2 text-sm text-[#D69ECD]">KYCs</span>
                         </Link>
 
@@ -62,11 +68,11 @@ const SidebarComp = ({children}) => {
                         className={
                             location.pathname.includes('/reports')
                             ?
-                            "flex items-center w-full py-2 mt-5 px-4 rounded-[4px] bg-[#A3258E] text-white  border-r-2 border-[#fff]"
+                            "flex items-center w-full py-2 mt-5 px-2 rounded-[4px] bg-[#A3258E] text-white  border-r-2 border-[#fff]"
                             :
-                            "flex items-center w-full mt-5 py-2 px-4 rounded-[4px] text-[#D69ECD]  hover:bg-[#A3258E] duration-300"
+                            "flex items-center w-full mt-5 py-2 px-2 rounded-[4px] text-[#D69ECD]  hover:bg-[#A3258E] duration-300"
                         }>
-                            <HomeIcon className='w-[18px] h-[18px]' />
+                            <TextSnippetIcon style={{width: '22px', height: '22px'}} />
                             <span className="ml-2 text-sm text-[#D69ECD]">Reports</span>
                         </Link>
 
@@ -74,23 +80,29 @@ const SidebarComp = ({children}) => {
                         className={
                             location.pathname.includes('/audit')
                             ?
-                            "flex items-center w-full py-2 mt-5 px-4 rounded-[4px] bg-[#A3258E] text-white  border-r-2 border-[#fff]"
+                            "flex items-center justify-between w-full py-2 mt-5 px-2 rounded-[4px] bg-[#A3258E] text-white  border-r-2 border-[#fff]"
                             :
-                            "flex items-center w-full mt-5 py-2 px-4 rounded-[4px] text-[#D69ECD]  hover:bg-[#A3258E] duration-300"
+                            "flex items-center justify-between w-full mt-5 py-2 px-2 rounded-[4px] text-[#D69ECD]  hover:bg-[#A3258E] duration-300"
                         }>
-                            <HomeIcon className='w-[18px] h-[18px]' />
+                            <div>
+                            <StickyNote2Icon style={{width: '22px', height: '22px'}} />
                             <span className="ml-2 text-sm text-[#D69ECD]">Audit Trail</span>
+                            </div>
+                            <div className='w-[20px] h-[20px] flex justify-center items-center rounded-full bg-[#C26EB3]'>
+                                <KeyboardArrowDownIcon style={{color: '#fff', fontSize: '18px'}} />
+                            </div>
+                            
                         </Link>
 
                         <Link to="/users" 
                         className={
                             location.pathname.includes('/users')
                             ?
-                            "flex items-center w-full py-2 mt-5 px-4 rounded-[4px] bg-[#A3258E] text-white  border-r-2 border-[#fff]"
+                            "flex items-center w-full py-2 mt-5 px-2 rounded-[4px] bg-[#A3258E] text-white  border-r-2 border-[#fff]"
                             :
-                            "flex items-center w-full mt-5 py-2 px-4 rounded-[4px] text-[#D69ECD]  hover:bg-[#A3258E] duration-300"
+                            "flex items-center w-full mt-5 py-2 px-2 rounded-[4px] text-[#D69ECD]  hover:bg-[#A3258E] duration-300"
                         }>
-                            <HomeIcon className='w-[18px] h-[18px]' />
+                            <GroupIcon style={{width: '22px', height: '22px'}} />
                             <span className="ml-2 text-sm">Users</span>
                         </Link>
 
@@ -98,14 +110,22 @@ const SidebarComp = ({children}) => {
                         className={
                             location.pathname.includes('/settings')
                             ?
-                            "flex items-center w-full py-2 mt-5 px-4 rounded-[4px] bg-[#A3258E] text-white  border-r-2 border-[#fff]"
+                            "flex items-center w-full py-2 mt-5 px-2 rounded-[4px] bg-[#A3258E] text-white  border-r-2 border-[#fff]"
                             :
-                            "flex items-center w-full mt-5 py-2 px-4 rounded-[4px] text-[#D69ECD]  hover:bg-[#A3258E] duration-300"
+                            "flex items-center w-full mt-5 py-2 px-2 rounded-[4px] text-[#D69ECD]  hover:bg-[#A3258E] duration-300"
                         }>
-                            <HomeIcon className='w-[18px] h-[18px]' />
+                            <SettingsIcon style={{width: '22px', height: '22px'}} />
                             <span className="ml-2 text-sm">Settings</span>
                         </Link>
+                      </div>
 
+                        <div className='mt-8 bg-[#A3258E] rounded-lg py-2 px-3 flex items-center gap-2'>
+                            <div className='bg-[#D8D8D8] w-[50px] h-[50px] rounded-full'></div>
+                           <div>
+                            <h6 className='text-[#fff] text-sm'>Nafisa Sh.</h6>
+                            <p className='text-[#D192C7] text-[10px] tracking-wider'>Support manager</p>                            
+                           </div>
+                        </div>
                   </div>
 
                 </div>
