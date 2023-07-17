@@ -1,4 +1,5 @@
 import React from 'react'
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 
 const RequestTable = () => {
     return ( 
@@ -57,7 +58,7 @@ const RequestTable = () => {
                         
                         <td className="py-4 px-4">
                            <div className='bg-[#EEF5FD] w-[30px] h-[30px] rounded-full flex items-center justify-center'>
-
+                           <KeyboardArrowRightIcon style={{color: '#CC87C0'}} />
                            </div>
                         </td>
                       </tr>
@@ -91,7 +92,7 @@ const RequestTable = () => {
                         
                         <td className="py-4 px-4">
                            <div className='bg-[#EEF5FD] w-[30px] h-[30px] rounded-full flex items-center justify-center'>
-
+                           <KeyboardArrowRightIcon style={{color: '#CC87C0'}} />
                            </div>
                         </td>
                       </tr>
@@ -125,7 +126,7 @@ const RequestTable = () => {
                         
                         <td className="py-4 px-4">
                            <div className='bg-[#EEF5FD] w-[30px] h-[30px] rounded-full flex items-center justify-center'>
-
+                              <KeyboardArrowRightIcon style={{color: '#CC87C0'}} />
                            </div>
                         </td>
                       </tr>
@@ -159,7 +160,7 @@ const RequestTable = () => {
                         
                         <td className="py-4 px-4">
                            <div className='bg-[#EEF5FD] w-[30px] h-[30px] rounded-full flex items-center justify-center'>
-
+                           <KeyboardArrowRightIcon style={{color: '#CC87C0'}} />
                            </div>
                         </td>
                       </tr>
