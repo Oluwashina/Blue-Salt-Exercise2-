@@ -3,8 +3,7 @@ import search_icon from '../../assets/icons/search-normal.svg'
 import WbSunnyIcon from '@mui/icons-material/WbSunny';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-// import logo_white from '../../assets/icons/logo-white.svg'
-// import logo_white from '../../assets/icons/wema.png'
+import logo_white from '../../assets/icons/logo-whitee.png'
 import { Link, useLocation } from 'react-router-dom';
 import HomeIcon from '@mui/icons-material/Home';
 import SettingsIcon from '@mui/icons-material/Settings';
@@ -46,11 +45,11 @@ const SidebarComp = ({children}) => {
     return ( 
         <>
             <div className='flex min-h-screen'>
-               <div className='bg-[#9A0E81] md:w-64 flex-shrink-0 px-4 oveflow-y-scroll py-8 hidden lg:block'>
+               <div className='bg-[#9A0E81] md:w-64 flex-shrink-0 px-4 oveflow-y-scroll relative py-8 hidden lg:block'>
                     <div className='flex justify-center'>
-                        <img src="https://asset.brandfetch.io/idMFIShKZ1/idiGgjHxNk.png" alt="logo" />
+                        <img src={logo_white} alt="logo" className='h-[50px]' />
                     </div>
-                  <div className='bg-[#A3258E] w-full h-[1px] mt-2'></div>
+                  <div className='bg-[#A3258E] w-full h-[1px] mt-4'></div>
 
                   <div className='mt-6 flex flex-col justify-between' style={{height: 'calc(100vh - 50px)'}}>
                      <div>
@@ -146,13 +145,21 @@ const SidebarComp = ({children}) => {
                         </Link>
                       </div>
 
-                        <div className='mt-8 bg-[#A3258E] rounded-lg py-2 px-3 flex items-center gap-2'>
+                        {/* <div className='mt-8 bg-[#A3258E] rounded-lg py-2 px-3 flex items-center gap-2'>
                             <div className='bg-[#D8D8D8] w-[50px] h-[50px] rounded-full'></div>
                            <div>
                             <h6 className='text-[#fff] text-sm'>Nafisa Sh.</h6>
                             <p className='text-[#D192C7] text-[10px] tracking-wider'>Support manager</p>                            
                            </div>
-                        </div>
+                        </div> */}
+                  </div>
+
+                  <div className='mt-8 bg-[#A3258E] rounded-lg py-2 px-3 flex items-center gap-2 absolute bottom-10 left-[16px] right-[16px]'>
+                            <div className='bg-[#D8D8D8] w-[50px] h-[50px] rounded-full'></div>
+                           <div>
+                            <h6 className='text-[#fff] text-sm'>Nafisa Sh.</h6>
+                            <p className='text-[#D192C7] text-[10px] tracking-wider'>Support manager</p>                            
+                           </div>
                   </div>
 
                 </div>
@@ -168,7 +175,7 @@ const SidebarComp = ({children}) => {
                 }
                  >
                      <div className='flex justify-center'>
-                        <img src="https://asset.brandfetch.io/idMFIShKZ1/idiGgjHxNk.png" alt="logo" />
+                        <img src={logo_white} alt="logo" className='h-[50px]' />
                     </div>
 
                     <div className='mt-6 flex flex-col justify-between' style={{height: 'calc(100vh - 50px)'}}>

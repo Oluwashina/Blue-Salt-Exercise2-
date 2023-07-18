@@ -6,7 +6,7 @@ const LineChartComp = () => {
     const data = [
         {
           name: 'Dec',
-          Agents: 40,
+          Agents: 20,
           Users: 24,
           amt: 24,
         },
@@ -19,7 +19,7 @@ const LineChartComp = () => {
         {
           name: 'Feb',
           Agents: 20,
-          Users: 98,
+          Users: 28,
           amt: 22,
         },
         {
@@ -31,13 +31,13 @@ const LineChartComp = () => {
         {
           name: 'Apr',
           Agents: 18,
-          Users: 48,
+          Users: 28,
           amt: 21,
         },
         {
           name: 'May',
           Agents: 23,
-          Users: 38,
+          Users: 21,
           amt: 25,
         },
         {
